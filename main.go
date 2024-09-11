@@ -19,7 +19,12 @@ func main() {
 
 	// Start a simple HTTP server
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "v01 Hello from %s!", hostname)
+		fmt.Fprintf(w, "v02 Hello from %s!", hostname)
+	})
+
+	// A health check url
+	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Health check for %s!", hostname)
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", nil))

@@ -1,1 +1,1 @@
-# Golang a simple web server.
+# Simple web server on Golang.
